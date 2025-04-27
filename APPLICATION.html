@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music School Enrollment</title>
+  <style>
+    .enrollment-form-container {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .enrollment-form-container .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+    .enrollment-form-container h1 {
+      text-align: center;
+      color: #1f2937;
+      margin-bottom: 1.5rem;
+    }
+    .enrollment-form-container .step-indicator {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #6b7280;
+    }
+    .enrollment-form-container .progress-bar {
+      width: 100%;
+      background-color: #e5e7eb;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+    .enrollment-form-container .progress {
+      height: 100%;
+      background-color: #4f46e5;
+      transition: width 0.3s ease;
+    }
+    .enrollment-form-container .form-step {
+      display: none;
+    }
+    .enrollment-form-container .form-step.active {
+      display: block;
+    }
+    .enrollment-form-container .form-group {
+      margin-bottom: 1rem;
+    }
+    .enrollment-form-container label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+    .enrollment-form-container input,
+    .enrollment-form-container select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    .enrollment-form-container input:focus,
+    .enrollment-form-container select:focus {
+      outline: none;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+    .enrollment-form-container .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+    .enrollment-form-container button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .enrollment-form-container .prev-btn {
+      background-color: #d1d5db;
+      color: #1f2937;
+    }
+    .enrollment-form-container .prev-btn:hover {
+      background-color: #9ca3af;
+    }
+    .enrollment-form-container .next-btn,
+    .enrollment-form-container .submit-btn {
+      background-color: #4f46e5;
+      color: white;
+    }
+    .enrollment-form-container .next-btn:hover,
+    .enrollment-form-container .submit-btn:hover {
+      background-color: #4338ca;
+    }
+    .enrollment-form-container .error {
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="enrollment-form-container">
+    <div class="container">
+      <h1>Music School Enrollment</h1>
+      <div class="step-indicator">Step <span id="current-step">1</span> of 3</div>
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <form id="enrollment-form">
+        <!-- Step 1: Personal Details -->
+        <div class="form-step active" id="step-1">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <div class="error" id="firstName-error">First Name is required</div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <div class="error" id="lastName-error">Last Name is required</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="email-error">Valid email is required</div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div class="error" id="phone-error">Phone number is required</div>
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select Category</option>
+              <option value="school">School</option>
+              <option value="church">Church</option>
+              <option value="individual">Individual</option>
+            </select>
+            <div class="error" id="category-error">Category is required</div>
+          </div>
+        </div>
+
+        <!-- Step 2: Category-Specific Details -->
+        <div class="form-step" id="step-2">
+          <div id="school-form" class="category-form" style="display: none;">
+            <div class="form-group">
+              <label for="schoolName">School Name</label>
+              <input type="text" id="schoolName" name="schoolName" required>
+              <div class="error" id="schoolName-error">School Name is required</div>
+            </div>
+            <div class="form-group">
+              <label for="studentCount">Estimated Student Count</label>
+              <input type="number" id="studentCount" name="studentCount" required>
+              <div class="error" id="studentCount-error">Student Count is required</div>
+            </div>
+          </div>
+          <div id="church-form" class="category-form" style="display: none;">
+            <div class="form-group">
+              <label for="churchName">Church Name</label>
+              <input type="text" id="churchName" name="churchName" required>
+              <div class="error" id="churchName-error">Church Name is required</div>
+            </div>
+            <div class="form-group">
+              <label for="congregationSize">Congregation Size</label>
+              <input type="number" id="congregationSize" name="congregationSize" required>
+              <div class="error" id="congregationSize-error">Congregation Size is required</div>
+            </div>
+          </div>
+          <div id="individual-form" class="category-form" style="display: none;">
+            <div class="form-group">
+              <label for="instrument">Preferred Instrument</label>
+              <input type="text" id="instrument" name="instrument" required>
+              <div class="error" id="instrument-error">Instrument is required</div>
+            </div>
+            <div class="form-group">
+              <label for="experienceLevel">Experience Level</label>
+              <select id="experienceLevel" name="experienceLevel" required>
+                <option value="">Select Experience Level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+              <div class="error" id="experienceLevel-error">Experience Level is required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Details -->
+        <div class="form-step" id="step-3">
+          <div class="form-group">
+            <label>Category Selected</label>
+            <p id="selected-category"></p>
+          </div>
+          <div class="form-group">
+            <label>Amount Due</label>
+            <p id="amount-due">$0</p>
+          </div>
+          <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="">Select Payment Method</option>
+              <option value="creditCard">Credit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="bankTransfer">Bank Transfer</option>
+            </select>
+            <div class="error" id="paymentMethod-error">Payment Method is required</div>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="button" id="prev-btn" style="display: none;">Previous</button>
+          <button type="button" id="next-btn" class="next-btn">Next</button>
+          <button type="submit" id="submit-btn" class="submit-btn" style="display: none;">Submit Enrollment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('enrollment-form');
+    const steps = document.querySelectorAll('.form-step');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const progress = document.getElementById('progress');
+    const currentStepDisplay = document.getElementById('current-step');
+    const categorySelect = document.getElementById('category');
+    const schoolForm = document.getElementById('school-form');
+    const churchForm = document.getElementById('church-form');
+    const individualForm = document.getElementById('individual-form');
+    const selectedCategory = document.getElementById('selected-category');
+    const amountDue = document.getElementById('amount-due');
+
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    // Pricing (replace with actual pricing from your homepage)
+    const pricing = {
+      school: 500,
+      church: 300,
+      individual: 100
+    };
+
+    // Update progress bar and step display
+    function updateProgress() {
+      const progressWidth = (currentStep / totalSteps) * 100;
+      progress.style.width = `${progressWidth}%`;
+      currentStepDisplay.textContent = currentStep;
+      console.log(`Progress updated: Step ${currentStep}, Width ${progressWidth}%`);
+    }
+
+    // Show current step
+    function showStep(step) {
+      steps.forEach((s, index) => {
+        s.classList.toggle('active', index + 1 === step);
+      });
+      prevBtn.style.display = step === 1 ? 'none' : 'block';
+      nextBtn.style.display = step === totalSteps ? 'none' : 'block';
+      submitBtn.style.display = step === totalSteps ? 'block' : 'none';
+      updateProgress();
+      console.log(`Showing step ${step}`);
+    }
+
+    // Validate form inputs for the current step
+    function validateInputs(step) {
+      let isValid = true;
+      let inputs = [];
+
+      if (step === 2) {
+        // Validate only the visible category form
+        const category = categorySelect.value;
+        if (category === 'school') {
+          inputs = schoolForm.querySelectorAll('input[required], select[required]');
+        } else if (category === 'church') {
+          inputs = churchForm.querySelectorAll('input[required], select[required]');
+        } else if (category === 'individual') {
+          inputs = individualForm.querySelectorAll('input[required], select[required]');
+        }
+      } else {
+        // Validate all required inputs in the step
+        inputs = steps[step - 1].querySelectorAll('input[required], select[required]');
+      }
+
+      console.log(`Validating step ${step} with ${inputs.length} required inputs`);
+
+      inputs.forEach(input => {
+        const errorElement = document.getElementById(`${input.id}-error`);
+        const value = input.value.trim();
+        let inputValid = true;
+
+        if (!value) {
+          inputValid = false;
+        } else if (input.type === 'email') {
+          // Basic email validation
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(value)) {
+            inputValid = false;
+            errorElement.textContent = 'Please enter a valid email';
+          }
+        }
+
+        if (!inputValid) {
+          isValid = false;
+          errorElement.style.display = 'block';
+        } else {
+          errorElement.style.display = 'none';
+        }
+
+        console.log(`Input ${input.id}: Value="${value}", Valid=${inputValid}`);
+      });
+
+      console.log(`Step ${step} validation result: ${isValid}`);
+      return isValid;
+    }
+
+    // Show category-specific form
+    function updateCategoryForm() {
+      const category = categorySelect.value;
+      schoolForm.style.display = category === 'school' ? 'block' : 'none';
+      churchForm.style.display = category === 'church' ? 'block' : 'none';
+      individualForm.style.display = category === 'individual' ? 'block' : 'none';
+      console.log(`Category selected: ${category}`);
+    }
+
+    // Update payment step
+    function updatePaymentStep() {
+      const category = categorySelect.value;
+      selectedCategory.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+      amountDue.textContent = `$${pricing[category] || 0}`;
+      console.log(`Payment step updated: Category=${category}, Amount=$${pricing[category] || 0}`);
+    }
+
+    // Handle next button
+    nextBtn.addEventListener('click', () => {
+      console.log(`Next button clicked at step ${currentStep}`);
+      try {
+        if (validateInputs(currentStep)) {
+          if (currentStep === 1) {
+            updateCategoryForm();
+          } else if (currentStep === 2) {
+            updatePaymentStep();
+          }
+          currentStep++;
+          showStep(currentStep);
+        } else {
+          console.log('Validation failed, staying on current step');
+        }
+      } catch (error) {
+        console.error('Error in next button handler:', error);
+      }
+    });
+
+    // Handle previous button
+    prevBtn.addEventListener('click', () => {
+      console.log(`Previous button clicked, moving to step ${currentStep - 1}`);
+      currentStep--;
+      showStep(currentStep);
+    });
+
+    // Handle category change
+    categorySelect.addEventListener('change', () => {
+      updateCategoryForm();
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      console.log(`Submit button clicked at step ${currentStep}`);
+      try {
+        if (validateInputs(currentStep)) {
+          const formData = new FormData(form);
+          const data = {};
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
+          console.log('Form submitted:', data);
+          alert('Enrollment submitted! Details: ' + JSON.stringify(data, null, 2));
+          form.reset();
+          currentStep = 1;
+          showStep(currentStep);
+        } else {
+          console.log('Final step validation failed');
+        }
+      } catch (error) {
+        console.error('Error in submit handler:', error);
+      }
+    });
+
+    // Initialize
+    console.log('Form initialized');
+    showStep(currentStep);
+  </script>
+</body>
+</html>
