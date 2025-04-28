@@ -41,7 +41,7 @@
     <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
         <a href="HOME.html" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
             <!--change-icon-to-bc-logo-->
-            <img src="./IMAGES/WhatsApp Image 2024-12-27 at 12.32.13 AM.ico" alt="nav-logo" class="logo">
+            <img src="./IMAGES/bc-log0-new0.jpeg" alt="nav-logo" class="logo">
             <span class="text-primary">bestcoach</span>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -73,19 +73,38 @@
 
 <!---HEADEER-BEGINS-HERE-->
 <!-- Header Start -->
-<div class="container-fluid bg-primary px-0 px-md-5 mb-5">
+<div class="container-fluid bg-primary px-0 px-md-5 mb-5 hero-section">
     <div class="row align-items-center px-3">
-        <div class="col-lg-6 text-center text-lg-left">
+        <div class="col-lg-6 text-center text-lg-left text-content">
             <h4 class="text-white mb-4 mt-5 mt-lg-0">Best Coach Music</h4>
             <h1 class="display-3 font-weight-bold text-white">Welcome to Bestcoach Music 🎶</h1>
             <p class="text-white mb-4">Unlock your musical potential with us! Join our vibrant community and take your skills to the next level. Whether you're a beginner or a seasoned musician, we have something for everyone. Get started today and let the music flow! 🎸🎤</p>
             <a href="about.html" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
-            <img class="img-fluid mt-5" src="IMAGES/kids-learning-multiple-instrumen.jpg" alt="hero-img" style="border-radius: 30%;">
+            <img class="img-fluid mt-5 hero-img mt-5" src="./IMAGES/image.jpg" alt="hero-img" style="border-radius: 30%;">
+            <div class="img-overlay"></div>
         </div>
     </div>
 </div>
+<script>
+    // JavaScript for dynamic image effects
+    document.addEventListener('DOMContentLoaded', () => {
+        const img = document.querySelector('.hero-img');
+        // Reset and trigger zoom-in animation
+        img.style.animation = 'none';
+        void img.offsetWidth; // Trigger reflow
+        img.style.animation = 'zoomIn 1.2s ease-out, float 4s ease-in-out infinite';
+
+        // Enhance hover effect
+        img.addEventListener('mouseenter', () => {
+            img.style.transform = 'scale(1.1)';
+        });
+        img.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1)';
+        });
+    });
+</script>
 <!-- Header End -->
 
 <!--SERVICES_BEGIN_HERE-->
