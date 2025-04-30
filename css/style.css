@@ -83,7 +83,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 /* Custom CSS for styling */
 .hero-section {
-  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  background: linear-gradient(135deg, #17a2b8, #3b82f6);
   min-height: 100vh;
   display: flex;
   align-items: center;
