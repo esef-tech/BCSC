@@ -1,0 +1,12 @@
+[build]
+  functions = "functions"
+  publish = "."
+  command = "npm install"
+
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/HOME.html"
+  status = 200
