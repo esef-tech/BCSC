@@ -1,9 +1,0 @@
-[build]
-  command = "npm install"
-  functions = "BACKEND"
-  publish = "."
-
-[[redirects]]
-  from = "/"
-  to = "BCSC/HOME.html"
-  status = 200

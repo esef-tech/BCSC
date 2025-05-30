@@ -95,7 +95,7 @@
                 <div class="col-lg-7 mb-5">
                     <div class="contact-form">
                         <div id="success"></div>
-      <form name="sentMessage" id="contactForm" novalidate="novalidate" action="/.netlify/functions/submit_form" method="post">
+      <form name="sentMessage" id="contactForm" novalidate="novalidate" action="#" method="post">
                         <input type="hidden" id="csrf_token" name="csrf_token">
                             <div class="control-group">
                                 <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
@@ -114,7 +114,7 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                              <div class="control-group">
-                            <div class="g-recaptcha" data-sitekey="6LeybU8rAAAAAEAhlnj5P0heHN_vx4U7FHDayHUx"></div>
+                            <div></div>
                             <p class="help-block text-danger"></p>
                         </div>
                             <div>
@@ -250,8 +250,6 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -272,16 +270,6 @@
     <script src="/BACK-END/N_Contact.js"></script>
     <script src="/BACK-END/function_submit_form.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-       <script>
-      function onClick(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LeybU8rAAAAAEAhlnj5P0heHN_vx4U7FHDayHUx', {action: 'submit'}).then(function(token) {
-              // Add your logic to submit to your backend server here.
-          });
-        });
-      }
-  </script>
-
+     <script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
 </body>
 </html>
