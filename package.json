@@ -1,0 +1,32 @@
+{
+  "name": "bcsc",
+  "version": "1.0.0",
+  "description": "This is a project for Besct Coach Music",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esef-tech/BCSC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esef-tech/BCSC/issues"
+  },
+  "homepage": "https://github.com/esef-tech/BCSC#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.5",
+    "faunadb": "^4.8.2",
+    "node-fetch": "^3.3.2",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
