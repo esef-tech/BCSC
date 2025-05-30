@@ -219,19 +219,19 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="newsletterForm" novalidate="novalidate">
+            <form  id="newsletterForm" novalidate="novalidate" action="">
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required"  id="newsletterName"/>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                        required="required" />
+                        required="required"  id="newsletterEmail"/>
                 </div>
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit" id="newsletterSubmitButton">Submit Now</button>
                 </div>
             </form>
-            <div id="newsletter_success"></div>
+            <div id="newsletterSuccess"></div>
         </div>
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
@@ -263,6 +263,7 @@
 <script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
 <script src="./functions/send-email.js"></script>
 <script src="./JS/form-submit.js"></script>      
+<script src="./JS/newsletter-submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 </body>
