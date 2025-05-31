@@ -367,14 +367,14 @@
 <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
-            <a href="HOME.html" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
+            <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
               <!-- <i class="flaticon-043-teddy-bear"></i> -->  
                 <span class="text-white">Bestcoach</span>
             </a>
             <p>
                 **Follow Us! 🎶**
                 Stay updated with Bestcoach Music. Click the buttons below to follow us on social media for exclusive content and the latest news!</p>
-            <div class="d-flex justify-content-start mt-4">
+              <div class="d-flex justify-content-start mt-4">
                 <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
                     style="width: 38px; height: 38px;" href=" https://wa.me/message/CJZ4XQCNRWWTB1"><i class="fa-brands fa-whatsapp"></i></a>
                 <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
@@ -412,35 +412,36 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Quick Links</h3>
                    <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="HOME.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class='text-white mb-2' href='/home'><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class='text-white mb-2' href='/about'><i class="fa fa-angle-right mr-2"></i>About Us</a>
                 <!--<a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Courses</a>-->
-                <a class="text-white mb-2" href="services.html"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                <a class='text-white mb-2' href='/services'><i class="fa fa-angle-right mr-2"></i>Our Services</a>
                 <!--Add-Instagram-for-blog-page-->
-                <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                <a class='text-white' href='/contact'><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>FAQ's</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form action="">
+            <form  id="newsletterForm" novalidate="novalidate" action="">
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required"  id="newsletterName"/>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                        required="required" />
+                        required="required"  id="newsletterEmail"/>
                 </div>
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit" id="newsletterSubmitButton">Submit Now</button>
                 </div>
             </form>
+            <div id="newsletterSuccess"></div>
         </div>
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
         <p class="m-0 text-center text-white">
             &copy; 2025 <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
-              <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
+             <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
         </p>
         
     </div>
@@ -454,21 +455,21 @@
 <!-- Footer End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
+ <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+ <!-- reCAPTCHA -->
+<script src="js/main.js"></script>
+<!-- Template Javascript -->
+<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
+<script src="./functions/send-email.js"></script>
+<script src="./JS/form-submit.js"></script>      
+<script src="./JS/newsletter-submit.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="./JS/bc_Main.js"></script>
 </body>
 </html>
