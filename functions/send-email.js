@@ -34,8 +34,8 @@ exports.handler = async function(event, context) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const msg = {
-    to: 'bestcoachmusic@gmail.com',
-    from: 'eseftechnology@gmail.com', // Replace with your verified sender email
+    to: 'bestcoah@gmail.com',
+    from: 'eseftechnology@gmail.com', // Must be verified in SendGrid
     subject: subject || 'Newsletter Subscription',
     text: `
       Name: ${name}

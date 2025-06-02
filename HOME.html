@@ -295,15 +295,15 @@
                         <h1 class="text-white m-0">Special Request</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-primary p-5">
-                        <form>
+                        <form id="specialRequestForm" novalidate="novalidate" action="">
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required"  id="specialRequestName" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required"  id="specialRequestEmail"/>
                             </div>
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
+                                <select class="custom-select border-0 px-4"  id="specialRequestService" style="height: 47px;" required="required" data-validation-required-message="Please select a course or service">
                                     <option selected>Select Course or Services</option>
                                     <option value="1">Piano</option>
                                     <option value="2">Drums</option>
@@ -326,9 +326,10 @@
                             </div>
                             <div>
                                 <!---ADD-SUBMISSION-TO-DATABASE-->
-                                <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Join Now</button>
+                                <button class="btn btn-secondary btn-block border-0 py-3" type="submit" id="specialRequestSubmitButton">Join Now</button>
                             </div>
                         </form>
+                        <div id="specialRequestSuccess"></div>
                     </div>
                 </div>
             </div>
@@ -517,6 +518,7 @@
 <script src="./functions/send-email.js"></script>
 <script src="./JS/form-submit.js"></script>      
 <script src="./JS/newsletter-submit.js"></script>
+<script src="./JS/special-request-submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </body>
 </html>
