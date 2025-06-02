@@ -1,6 +1,10 @@
 $(document).ready(function() {
+  // Log to confirm script is loaded
+  console.log('special-request-submit.js loaded');
+
   $('#specialRequestForm').on('submit', function(e) {
     e.preventDefault();
+    console.log('Special Request Form submit event triggered');
 
     // Get form data
     const name = $('#specialRequestName').val().trim();
@@ -32,7 +36,8 @@ $(document).ready(function() {
       data: JSON.stringify(formData),
       success: function(response) {
         console.log('Special Request submission successful:', response);
-        $('#specialRequestSuccess').html('<div class="alert alert-success">Request is successfully sent</div>');
+        // Display success message and hide immediately
+        $('#specialRequestSuccess').html('<div class="alert alert-success">Request is successfully sent</div>').fadeOut(0);
         $('#specialRequestForm')[0].reset();
       },
       error: function(xhr, status, error) {
