@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // Log to confirm script is loaded
   console.log('special-request-submit.js loaded');
 
   $('#specialRequestForm').on('submit', function(e) {
@@ -12,13 +11,13 @@ $(document).ready(function() {
     const service = $('#specialRequestService').val();
 
     // Validate form data
-    if (!name || !email || !service) {
+    if (!name || !email || !service || service === '') {
       console.warn('Validation failed:', { name, email, service });
-      $('#specialRequestSuccess').html('<div class="alert alert-danger">Please fill out all fields.</div>');
+      $('#specialRequestSuccess').html('<div class="alert alert-danger">Please fill out all fields, including a valid service.</div>');
       return;
     }
 
-    // Log form data for debugging
+    // Log form data
     const formData = {
       name: name,
       email: email,
@@ -34,11 +33,18 @@ $(document).ready(function() {
       type: 'POST',
       contentType: 'application/json',
       data: JSON.stringify(formData),
-      success: function(response) {
-        console.log('Special Request submission successful:', response);
-        // Display success message and hide immediately
-        $('#specialRequestSuccess').html('<div class="alert alert-success">Request is successfully sent</div>').fadeOut(0);
-        $('#specialRequestForm')[0].reset();
+      complete: function(xhr, status) {
+        console.log('AJAX complete:', { status: status, statusCode: xhr.status, response: xhr.responseJSON });
+      },
+      success: function(response, textStatus, xhr) {
+        if (xhr.status === 200) {
+          console.log('Special Request submission successful:', response);
+          $('#specialRequestSuccess').html('<div class="alert alert-success">Request is successfully sent</div>').fadeOut(0);
+          $('#specialRequestForm')[0].reset();
+        } else {
+          console.warn('Unexpected success status:', xhr.status);
+          $('#specialRequestSuccess').html('<div class="alert alert-danger">Unexpected response. Please try again.</div>');
+        }
       },
       error: function(xhr, status, error) {
         console.error('Special Request submission error:', {

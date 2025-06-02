@@ -1,6 +1,8 @@
 const sgMail = require('@sendgrid/mail');
 
 exports.handler = async function(event, context) {
+  console.log('send-email function invoked:', { httpMethod: event.httpMethod, body: event.body });
+
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
@@ -13,7 +15,9 @@ exports.handler = async function(event, context) {
   let data;
   try {
     data = JSON.parse(event.body);
+    console.log('Parsed form data:', data);
   } catch (error) {
+    console.error('Error parsing body:', error);
     return {
       statusCode: 400,
       body: JSON.stringify({ message: 'Invalid request body' }),
@@ -24,6 +28,7 @@ exports.handler = async function(event, context) {
 
   // Basic validation
   if (!name || !email) {
+    console.error('Validation failed:', { name, email });
     return {
       statusCode: 400,
       body: JSON.stringify({ message: 'Name and email are required' }),
@@ -40,20 +45,22 @@ exports.handler = async function(event, context) {
     text: `
       Name: ${name}
       Email: ${email}
-      Subject: ${subject || 'Newsletter Subscription'}
-      Message: ${message || 'User subscribed to newsletter'}
+      Subject: ${subject || ' '}
+      Message: ${message || ' '}
     `,
     html: `
       <h3>New Form Submission</h3>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Subject:</strong> ${subject || 'Newsletter Subscription'}</p>
-      <p><strong>Message:</strong> ${message || 'User subscribed to newsletter'}</p>
+      <p><strong>Subject:</strong> ${subject || ' '}</p>
+      <p><strong>Message:</strong> ${message || ' '}</p>
     `,
   };
 
   try {
+    console.log('Sending email with:', msg);
     await sgMail.send(msg);
+    console.log('Email sent successfully');
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Form submitted successfully' }),
