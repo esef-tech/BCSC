@@ -521,5 +521,28 @@
 <script src="./JS/newsletter-submit.js"></script>
 <script src="./JS/special-request-submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAwGz0hCebMn5N_Lph_mg3A2fWJU5bnXDA",
+    authDomain: "bestcoach-music.firebaseapp.com",
+    projectId: "bestcoach-music",
+    storageBucket: "bestcoach-music.firebasestorage.app",
+    messagingSenderId: "662572389042",
+    appId: "1:662572389042:web:9835e7b165a6d4d3222fab",
+    measurementId: "G-Q1663QBC7P"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </body>
 </html>
