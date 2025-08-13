@@ -25,7 +25,6 @@
  <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
- 
 
  <!-- Libraries Stylesheet -->
  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -33,7 +32,7 @@
 
  <!-- Customized Bootstrap Stylesheet -->
  <link href="css/style.css" rel="stylesheet">
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEu1gI89YLQuJnpQqKzAI0Vck8UnzxOyA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <!-- Navbar Start -->
@@ -89,7 +88,44 @@
                     <div id="recaptcha-container-signup"></div> <!-- For reCAPTCHA in 2FA -->
                     <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
                 </form>
+                <div class="mt-3 text-center">
+                    <button id="googleSignup" class="btn btn-danger mr-2"><i class="fab fa-google"></i></button>
+                    <button id="appleSignup" class="btn btn-dark"><i class="fab fa-apple"></i></button>
+                </div>
                 <div id="signupError" class="text-danger"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Email" required>
+                    <input type="password" id="loginPassword" class="form-control mt-2" placeholder="Password" required>
+                    <div id="recaptcha-container-login"></div> <!-- For reCAPTCHA in 2FA -->
+                    <button type="submit" class="btn btn-primary mt-3">Login</button>
+                </form>
+                <div class="mt-3 text-center">
+                    <button id="googleLogin" class="btn btn-danger mr-2"><i class="fab fa-google"></i></button>
+                    <button id="appleLogin" class="btn btn-dark"><i class="fab fa-apple"></i></button>
+                </div>
+                <div id="loginError" class="text-danger"></div>
+                <div id="mfaSection" style="display:none;">
+                    <input type="text" id="mfaCode" class="form-control mt-2" placeholder="Enter 2FA Code from SMS">
+                    <button id="verifyMfa" class="btn btn-primary mt-3">Verify</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
