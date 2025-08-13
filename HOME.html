@@ -72,6 +72,53 @@
         </div>
 
     </nav>
+    <!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm">
+                    <input type="email" id="signupEmail" class="form-control" placeholder="Email" required>
+                    <input type="password" id="signupPassword" class="form-control mt-2" placeholder="Password" required>
+                    <input type="text" id="signupName" class="form-control mt-2" placeholder="Full Name" required>
+                    <input type="tel" id="signupPhone" class="form-control mt-2" placeholder="Phone Number for 2FA (e.g., +1234567890)" required>
+                    <div id="recaptcha-container-signup"></div> <!-- For reCAPTCHA in 2FA -->
+                    <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+                </form>
+                <div id="signupError" class="text-danger"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Email" required>
+                    <input type="password" id="loginPassword" class="form-control mt-2" placeholder="Password" required>
+                    <div id="recaptcha-container-login"></div> <!-- For reCAPTCHA in 2FA -->
+                    <button type="submit" class="btn btn-primary mt-3">Login</button>
+                </form>
+                <div id="loginError" class="text-danger"></div>
+                <div id="mfaSection" style="display:none;">
+                    <input type="text" id="mfaCode" class="form-control mt-2" placeholder="Enter 2FA Code from SMS">
+                    <button id="verifyMfa" class="btn btn-primary mt-3">Verify</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <!-- Navbar End -->
     <!--End-of-NAV-BAR-->
