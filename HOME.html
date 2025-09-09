@@ -33,36 +33,6 @@
  <!-- Customized Bootstrap Stylesheet -->
  <link href="css/style.css" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEu1gI89YLQuJnpQqKzAI0Vck8UnzxOyA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Firebase SDK -->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, PhoneAuthProvider, PhoneMultiFactorGenerator, getMultiFactorResolver, RecaptchaVerifier, multiFactor } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
-  import { getFirestore, doc, setDoc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
-  import { getStorage, ref as storageRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-storage.js";
-  import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
-  import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-messaging.js";
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    // YOUR_FIREBASE_CONFIG (paste from Firebase console)
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const storage = getStorage(app);
-  const analytics = getAnalytics(app);
-  const messaging = getMessaging(app);
-
-  // Export for use in other scripts
-  window.firebaseAuth = auth;
-  window.firebaseDb = db;
-  window.firebaseStorage = storage;
-  window.firebaseAnalytics = analytics;
-  window.firebaseMessaging = messaging;
-</script>
 </head>
 <body>
 <!-- Navbar Start -->
@@ -411,15 +381,16 @@
                         <h1 class="text-white m-0">Special Request</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-primary p-5">
-                        <form id="specialRequestForm" novalidate="novalidate" action="">
+                        <form id="form"  method="POST">
+                             <input type="hidden" name="access_key" value="e3d93276-416a-4538-8dec-5c93e27ffa8b">
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required"  id="specialRequestName" />
+                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required"  name="name" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required"  id="specialRequestEmail"/>
+                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required"  name="email"/>
                             </div>
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4"  id="specialRequestService" style="height: 47px;" required="required" data-validation-required-message="Please select a course or service">
+                                <select class="custom-select border-0 px-4"  name="message" style="height: 47px;" required="required" data-validation-required-message="Please select a course or service">
                                     <option  value="" selected disabled>Select Course or Services</option>
                                     <option value="1">Piano</option>
                                     <option value="2">Drums</option>
@@ -442,10 +413,10 @@
                             </div>
                             <div>
                                 <!---ADD-SUBMISSION-TO-DATABASE-->
-                                <button class="btn btn-secondary btn-block border-0 py-3" type="submit" id="specialRequestSubmitButton">Join Now</button>
+                                <button class="btn btn-secondary btn-block border-0 py-3" type="submit" >Join Now</button>
                             </div>
                         </form>
-                         <div id="specialRequestSuccess"></div>
+                         <div id="result"></div>
                     </div>
                 </div>
             </div>
@@ -587,22 +558,24 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="newsletterForm" novalidate="novalidate" action="">
+            <form  id="form" novalidate="novalidate" method="POST">
+                
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required"  id="newsletterName"/>
+                    <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
+                    <input type="text" name="name" class="form-control border-0 py-4" placeholder="Your Name" required="required"  />
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                        required="required"  id="newsletterEmail"/>
+                    <input type="email"  name="email"  class="form-control border-0 py-4" placeholder="Your Email"
+                        required="required" />
                 </div>
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit" id="newsletterSubmitButton">Submit Now</button>
+                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
                 </div>
             </form>
-            <div id="newsletterSuccess"></div>
+            <div id="result"></div>
         </div>
     </div>
-    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
         <p class="m-0 text-center text-white">
             &copy; 2025 <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
              <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
@@ -634,133 +607,8 @@
 <script src="./functions/send-email.js"></script>
 <script src="./JS/form-submit.js"></script>      
 <script src="./JS/newsletter-submit.js"></script>
-<script src="./JS/special-request-submit.js"></script>
+<script src="./JS/Submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script type="module" src="JS\Fire_base_config.JS"></script>
-<script type="module">
-  const auth = window.firebaseAuth;
-  const db = window.firebaseDb;
-  const storage = window.firebaseStorage;
-  const analytics = window.firebaseAnalytics;
-  const messaging = window.firebaseMessaging;
-
-  // reCAPTCHA for 2FA
-  window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container-signup', { size: 'invisible' });
-  window.recaptchaVerifierLogin = new RecaptchaVerifier(auth, 'recaptcha-container-login', { size: 'invisible' });
-
-  // Signup with 2FA Enrollment
-  document.getElementById('signupForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
-    const name = document.getElementById('signupName').value;
-    const phone = document.getElementById('signupPhone').value;
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      // Enroll 2FA (phone)
-      const phoneInfoOptions = { phoneNumber: phone, session: await multiFactor(user).getSession() };
-      const phoneAuthProvider = new PhoneAuthProvider(auth);
-      const verificationId = await phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, window.recaptchaVerifier);
-      const verificationCode = prompt('Enter the code sent to your phone:'); // For demo; use input in production
-      const phoneCredential = PhoneAuthProvider.credential(verificationId, verificationCode);
-      await multiFactor(user).enroll(PhoneMultiFactorGenerator.assertion(phoneCredential), 'Phone');
-
-      // Update profile
-      await updateProfile(user, { displayName: name });
-      await setDoc(doc(db, 'users', user.uid), { name, phone, picture: '' }); // Initial profile in Firestore
-
-      // Log event
-      logEvent(analytics, 'signup', { method: 'email' });
-      await setDoc(doc(db, 'activities', user.uid + '_' + Date.now()), { action: 'signup', timestamp: new Date() });
-
-      $('#signupModal').modal('hide');
-    } catch (error) {
-      document.getElementById('signupError').textContent = error.message;
-    }
-  });
-
-  // Login with 2FA
-  document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      logEvent(analytics, 'login', { method: 'email' });
-      await setDoc(doc(db, 'activities', userCredential.user.uid + '_' + Date.now()), { action: 'login', timestamp: new Date() });
-      $('#loginModal').modal('hide');
-    } catch (error) {
-      if (error.code === 'auth/multi-factor-auth-required') {
-        const resolver = getMultiFactorResolver(auth, error);
-        const phoneInfoOptions = { multiFactorHint: resolver.hints[0], session: resolver.session };
-        const phoneAuthProvider = new PhoneAuthProvider(auth);
-        const verificationId = await phoneAuthProvider.verifyPhoneNumber(phoneInfoOptions, window.recaptchaVerifierLogin);
-        document.getElementById('mfaSection').style.display = 'block';
-
-        document.getElementById('verifyMfa').addEventListener('click', async () => {
-          const code = document.getElementById('mfaCode').value;
-          const credential = PhoneAuthProvider.credential(verificationId, code);
-          const assertion = PhoneMultiFactorGenerator.assertion(credential);
-          await resolver.resolveSignIn(assertion);
-          $('#loginModal').modal('hide');
-        });
-      } else {
-        document.getElementById('loginError').textContent = error.message;
-      }
-    }
-  });
-
-  // Auth State Listener: Update Navbar and Profile
-  onAuthStateChanged(auth, async (user) => {
-    const authSection = document.getElementById('auth-section');
-    if (user) {
-      const userDoc = await getDoc(doc(db, 'users', user.uid));
-      const profileData = userDoc.data();
-      authSection.innerHTML = `
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle">
-            <img src="${profileData.picture || 'default-avatar.png'}" alt="Profile" style="width:30px; height:30px; border-radius:50%;">
-            ${user.displayName}
-          </a>
-          <div class="dropdown-menu">
-            <a href="profile.html" class="dropdown-item">Edit Profile</a>
-            <a href="#" id="logout" class="dropdown-item">Logout</a>
-          </div>
-        </div>
-      `;
-      document.getElementById('logout').addEventListener('click', () => auth.signOut());
-
-      // Real-time activity tracking (listen for changes)
-      onSnapshot(doc(db, 'activities', user.uid), (doc) => {
-        console.log('Real-time update:', doc.data()); // Update UI in dashboard
-      });
-
-      // Setup Notifications
-      Notification.requestPermission().then((permission) => {
-        if (permission === 'granted') {
-          getToken(messaging, { vapidKey: 'YOUR_PUBLIC_VAPID_KEY' }).then((token) => {
-            setDoc(doc(db, 'users', user.uid), { fcmToken: token }, { merge: true }); // Store token for sending notifications
-          });
-        }
-      });
-      onMessage(messaging, (payload) => {
-        alert('Notification: ' + payload.notification.body); // Handle foreground notifications
-      });
-    } else {
-      authSection.innerHTML = `
-        <a href="#" class="btn btn-primary px-4" data-toggle="modal" data-target="#signupModal">Sign Up</a>
-        <a href="#" class="btn btn-primary px-4 ml-2" data-toggle="modal" data-target="#loginModal">Login</a>
-      `;
-    }
-  });
-
-  // Track page view activity (example real-time tracking)
-  logEvent(analytics, 'page_view', { page: window.location.pathname });
-  await setDoc(doc(db, 'activities', auth.currentUser?.uid + '_' + Date.now()), { action: 'page_view', page: window.location.pathname, timestamp: new Date() });
-</script>
 </body>
 </html>
