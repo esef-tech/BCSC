@@ -161,7 +161,8 @@
         </div>
     </div>
     <!-- Contact End -->
-     <!--FOOTER-BEGINS-HERE-->
+    
+<!--FOOTER-BEGINS-HERE-->
 <!-- Footer Start -->
 <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
@@ -222,31 +223,32 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="form" novalidate="novalidate" method="POST">
+            <form  id="form" novalidate="novalidate  method="POST">
                 <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" name="name" required="required"  id="newsletterName"/>
+                <input type="text" name="name"  class="form-control border-0 py-4" placeholder="Your Name" required>    
+    
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control border-0 py-4" placeholder="Your Email" name="email"
-                        required="required"/>
+                  <input type="email" name="email"  class="form-control border-0 py-4" placeholder="Your Email" required> 
                 </div>
+                <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    <button type="submit" class="btn btn-primary btn-block border-0 py-3">Submit Form</button>
                 </div>
             </form>
             <div id="result"></div>
         </div>
     </div>
-    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
         <p class="m-0 text-center text-white">
-            &copy; 2025 <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
+            &copy; <span id="current-year"></span> <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
              <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
         </p>
         
     </div>
 </div>
-<!--chnage-to-whatsapp-assistant-->
 <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-f94d6c02-b34d-4a9d-87b5-94e51505e5cd" data-elfsight-app-lazy></div>
@@ -262,13 +264,15 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
  <!-- reCAPTCHA -->
-<script src="js/main.js"></script>
+<script src="JS/bc_Main.js"></script>
 <!-- Template Javascript -->
-<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
-<script src="./functions/send-email.js"></script>
-<script src="./JS/form-submit.js"></script>      
+<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>    
 <script src="./JS/Submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./JS/Year.js"></script>
+<!-- Footer End -->
+
+    
 
 </body>
 </html>

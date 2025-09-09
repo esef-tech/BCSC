@@ -411,6 +411,10 @@
                                     <option value="Ensemble Opportunities">Ensemble Opportunities</option>
                                 </select>
                             </div>
+                            </div>
+                <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <div>
                             <div>
                                 <!---ADD-SUBMISSION-TO-DATABASE-->
                                 <button class="btn btn-secondary btn-block border-0 py-3" type="submit" >Join Now</button>
@@ -561,15 +565,16 @@
             <form  id="form" novalidate="novalidate  method="POST">
                 <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
                 <div class="form-group">
-                    
-                    <input type="text" name="name" class="form-control border-0 py-4" placeholder="Your Name" required="required"  />
+                <input type="text" name="name"  class="form-control border-0 py-4" placeholder="Your Name" required>    
+    
                 </div>
                 <div class="form-group">
-                    <input type="email"  name="email"  class="form-control border-0 py-4" placeholder="Your Email"
-                        required="required" />
+                  <input type="email" name="email"  class="form-control border-0 py-4" placeholder="Your Email" required> 
                 </div>
+                <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    <button type="submit" class="btn btn-primary btn-block border-0 py-3">Submit Form</button>
                 </div>
             </form>
             <div id="result"></div>
