@@ -360,71 +360,70 @@
 <!-- Class End -->
 
 <!--REGISTRATION-GOES-HER-->
-  <!-- Registration Start -->
-  <div class="container-fluid py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-                <p class="section-title pr-5"><span class="pr-2">Bestcoach Music</span></p>
-                <h1 class="mb-4">Register Now</h1>
-                <p>Ready to take your musical journey to the next level? Register now and become a part of our vibrant community! Fill out the form below and let's make some beautiful music together. 🎸🎤</p>
-                <ul class="list-inline m-0">
-                    <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Best Coach Music excels in music education. 🎵</li>
-                    <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Bestcoach Music nurtures musicians. 🎵</li>
-                    <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Bestcoach Music, a BCSE-CENTRE subsidiary 🎵</li>
-                </ul>
-                <a href="#" class="btn btn-primary mt-4 py-2 px-4">Enroll Now</a>
-            </div>
-            <div class="col-lg-5">
-                <div class="card border-0">
-                    <div class="card-header bg-secondary text-center p-4">
-                        <h1 class="text-white m-0">Special Request</h1>
-                    </div>
-                    <div class="card-body rounded-bottom bg-primary p-5">
-                        <form id="form"  method="POST">
-                             <input type="hidden" name="access_key" value="e3d93276-416a-4538-8dec-5c93e27ffa8b">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required"  name="name" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required"  name="email"/>
-                            </div>
-                            <div class="form-group">
-                                <select class="custom-select border-0 px-4"  name="Course or Service Selected" style="height: 47px;" required="required" data-validation-required-message="Please select a course or service">
-                                    <option  value="" selected disabled>Select Course or Services</option>
-                                    <option value="Piano">Piano</option>
-                                    <option value="Drums">Drums</option>
-                                    <option value="Bass">Bass</option>
-                                    <option value="Lead & Acoustic">Lead & Acoustic Guitar</option>
-                                    <option value="Trumpet">Trumpet</option>
-                                    <option value="Trombone">Trombone</option>
-                                    <option value="Clarinet">Clarinet & More...</option>
-                                    <option value="Disk Jocky">Disk Jockey</option>
-                                    <option value="Music Theory">Music Theory & More...</option>
-                                    <option value="Sound Engineering Services">Sound Engineering Services</option>
-                                    <option value="Sound Production For Events">Sound production for events</option>
-                                    <option value="Music Production">Music Production</option>
-                                    <option value="Instrumentalists Services">Instrumentalists services</option>
-                                    <option value="Musical Instrument Rentals">Musical Instruements Rentals</option>
-                                    <option value="Musical Intsruments Repairs">Musical Instruments Repairs</option>
-                                    <option value="Workshops">Workshops</option>
-                                    <option value="Ensemble Opportunities">Ensemble Opportunities</option>
-                                </select>
-                            </div>
-                            </div>
-                            </div>
-                           <div>
-                            <div>
-                                <button class="btn btn-secondary btn-block border-0 py-3" type="submit" >Join Now</button>
-                            </div>
-                        </form>
-                         <div id="result"></div>
+    <!-- Registration Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <p class="section-title pr-5"><span class="pr-2">Bestcoach music</span></p>
+                    <h1 class="mb-4">Register Now</h1>
+                    <p>Ready to take your musical journey to the next level? Register now and become a part of our vibrant community! Fill out the form below and let's make some beautiful music together. 🎸🎤</p>
+                    <ul class="list-inline m-0">
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Best Coach Music excels in music education. 🎵</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Bestcoach Music nurtures musicians. 🎵</li>
+                        <li class="py-2"><i class="fa fa-check text-success mr-3"></i>Bestcoach Music, a BCSE-CENTRE subsidiary 🎵</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-4 py-2 px-4">Enroll Now</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-secondary text-center p-4">
+                            <h1 class="text-white m-0">Special Request</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form method="POST" id="form">
+                                     <div class="form-group">
+                                   <input type="hidden" name="access_key" value="e3d93276-416a-4538-8dec-5c93e27ffa8b">
+                                     </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name"  name="name"  required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" name="email" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" name="Courses & Services" style="height: 47px;">
+                                        <option selected>Select Course or Service</option>
+                                        <option value="Piano Lessons">Piano Lessons</option>
+                                        <option value="Drum Lessons">Drum Lessons</option>
+                                        <option value="Lead & Acoustc Guitar Lessons">Lead & Acoustc Guitar Lessons</option>
+                                        <option value="Trumpet Lessons">Trumpet Lessons</option>
+                                        <option value="Clarinet Lessons">Clarinet lessons</option>
+                                        <option value="Music Theory">Music Theory</option>
+                                        <option value="Sound Engineering Services">Sound Engineering Services</option>
+                                        <option value="Sound Production for events">Sound Production for events</option>
+                                        <option value="Musical Intruemnts Rentals">Musical Intruemnts Rentals</option>
+                                        <option value="Musical  Intruments Repairs">Musical  Intruments Repairs</option>
+                                        <option value="Musical Intruments Purchase">Musical Intruments Purchase</option>
+                                        <option value="Workshops">Workshops</option>
+                                        <option value="Intrumentaiton Services">Intrumentaiton Services</option>
+                                    </select>
+                                </div>
+                                <div class="form-group>
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                                </div>
+                                <div>
+                                    <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Join Now</button>
+                                </div>
+                               <div id="result"></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- Registration End -->
 <!-- Registration End -->
 
 <!---ANNOUNCE-->
@@ -560,22 +559,23 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="form"   method="POST">
-                <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
+            <!--form here-->
+              <form method="POST" id="form">
                 <div class="form-group">
-                <input type="text" name="name"  class="form-control border-0 py-4" placeholder="Your Name" required>    
-    
+                    <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
                 </div>
-                <div class="form-group">
-                  <input type="email" name="email"  class="form-control border-0 py-4" placeholder="Your Email" required> 
-                </div>
-                <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="form-control border-0 p-4 hidden" style="display: none;">
-                <div>
-                    <button type="submit" class="btn btn-primary btn-block border-0 py-3">Submit Form</button>
-                </div>
-            </form>
-            <div id="result"></div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name"  name="name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" name="email"
+                            required="required" />
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    </div>
+                    <div id="result"></div>
+                </form>
         </div>
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
