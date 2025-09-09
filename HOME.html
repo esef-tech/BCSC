@@ -558,7 +558,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="form"  method="POST">
+            <form  id="form" novalidate="novalidate  method="POST">
                 <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
                 <div class="form-group">
                     
@@ -577,7 +577,7 @@
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
         <p class="m-0 text-center text-white">
-            &copy; 2025 <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
+            &copy; <span id="current-year"></span> <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
              <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
         </p>
         
@@ -601,14 +601,11 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
  <!-- reCAPTCHA -->
-<script src="js/main.js"></script>
+<script src="JS/bc_Main.js"></script>
 <!-- Template Javascript -->
-<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
-<script src="./functions/send-email.js"></script>
-<script src="./JS/form-submit.js"></script>      
-<script src="./JS/newsletter-submit.js"></script>
+<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>    
 <script src="./JS/Submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="module" src="JS\Fire_base_config.JS"></script>
+<script src="./JS/Year.js"></script>
 </body>
 </html>
