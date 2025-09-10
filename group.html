@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>|GROUP|CATEGORY|BEST|COACH|MUSIC|</title>
+    <title>|GROUP</title>
     <meta content="Best Coach Music" name="keywords">
     <meta content="Best Coach Music " name="description">
     <!--favicong goes here-->
@@ -47,21 +47,21 @@
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav font-weight-bold mx-auto py-0">
-                <a href="HOME.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="services.html" class="nav-item nav-link">Services</a>
+                <a href="https://bestcoachmusic.netlify.app/home" class="nav-item nav-link ">Home</a>
+                <a href="https://bestcoachmusic.netlify.app/about" class="nav-item nav-link">About</a>
+                <a href="https://bestcoachmusic.netlify.app/services" class="nav-item nav-link">Services</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="church.html" class="dropdown-item">Churches</a>
-                        <a href="school.html" class="dropdown-item">Schools</a>
-                        <a href="Individuals.html" class="dropdown-item">Individuals</a>
-                        <a href="group.html" class="dropdown-item active">Groups</a>
+                        <a href="https://bestcoachmusic.netlify.app/church" class="dropdown-item active">Churches</a>
+                        <a href="https://bestcoachmusic.netlify.app/school" class="dropdown-item">Schools</a>
+                        <a href="https://bestcoachmusic.netlify.app/individuals" class="dropdown-item">Individuals</a>
+                        <a href="https://bestcoachmusic.netlify.app/group" class="dropdown-item">Groups</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="https://bestcoachmusic.netlify.app/contact" class="nav-item nav-link">Contact</a>
             </div>
               <!--ADD-LINK-TO-JOIN-USING-GOGGLE-FORMS-->
             <a href="" class="btn btn-primary px-4">Join</a>
@@ -362,6 +362,7 @@
 <!-- Detail End -->
 
 <!--FOOTER-BEGINS-HERE-->
+<!--FOOTER-BEGINS-HERE-->
 <!-- Footer Start -->
 <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
@@ -411,35 +412,39 @@
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Quick Links</h3>
                    <div class="d-flex flex-column justify-content-start">
-                <a class='text-white mb-2' href='/home'><i class="fa fa-angle-right mr-2"></i>Home</a>
-                <a class='text-white mb-2' href='/about'><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                <a class='text-white mb-2' href="https://bestcoachmusic.netlify.app/home"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class='text-white mb-2' href="https://bestcoachmusic.netlify.app/about"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                 <!--<a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Courses</a>-->
-                <a class='text-white mb-2' href='/services'><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                <a class='text-white mb-2' href="https://bestcoachmusic.netlify.app/services"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
                 <!--Add-Instagram-for-blog-page-->
-                <a class='text-white' href='/contact'><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                <a class='text-white' href="https://bestcoachmusic.netlify.app/contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                  <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>FAQ's</a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="newsletterForm" novalidate="novalidate" action="">
+            <!--form here-->
+              <form method="POST" name="contact" netlify>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required"  id="newsletterName"/>
+                    <input type="hidden" name="form-name" value="contact" />
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                        required="required"  id="newsletterEmail"/>
-                </div>
-                <div>
-                    <button class="btn btn-primary btn-block border-0 py-3" type="submit" id="newsletterSubmitButton">Submit Now</button>
-                </div>
-            </form>
-            <div id="newsletterSuccess"></div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name"  name="name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" name="email"
+                            required="required"/>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    </div>
+                    <div id="result"></div>
+                </form>
         </div>
     </div>
-    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
+    <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
         <p class="m-0 text-center text-white">
-            &copy; 2025 <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
+            &copy; <span id="current-year"></span> <a class="text-primary font-weight-bold" href="https://bestcoachmusic.netlify.app/home">Bestcoach</a>. All Rights Reserved. 
              <a class="text-primary font-weight-bold" href="https://esef-tech.netlify.app/">Bestcoach.Dev</a>
         </p>
         
@@ -453,13 +458,9 @@
   </script>
 <!-- Footer End -->
 
-
-
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-     <!-- JavaScript Libraries -->
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -467,12 +468,12 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
  <!-- reCAPTCHA -->
-<script src="js/main.js"></script>
+<script src="JS/bc_Main.js"></script>
 <!-- Template Javascript -->
-<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>
-<script src="./functions/send-email.js"></script>
-<script src="./JS/form-submit.js"></script>      
-<script src="./JS/newsletter-submit.js"></script>
+<script src="https://kit.fontawesome.com/2098d57e38.js" crossorigin="anonymous"></script>    
+<script src="./JS/Submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./JS/Year.js"></script>
+<script src="./JS/newsLetter.js"></script>
 </body>
 </html>

@@ -48,19 +48,19 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav font-weight-bold mx-auto py-0">
-                <a class='nav-item nav-link' href='/home'>Home</a>
-                <a class='nav-item nav-link' href='/about'>About</a>
-                <a class='nav-item nav-link' href='/services'>Services</a>
+                <a href="https://bestcoachmusic.netlify.app/home" class="nav-item nav-link ">Home</a>
+                <a href="https://bestcoachmusic.netlify.app/about" class="nav-item nav-link">About</a>
+                <a href="https://bestcoachmusic.netlify.app/services" class="nav-item nav-link">Services</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a class='dropdown-item' href='/church'>Churches</a>
-                        <a class='dropdown-item' href='/school'>Schools</a>
-                        <a class='dropdown-item' href='/individuals'>Individuals</a>
-                        <a class='dropdown-item' href='/group'>Groups</a>
+                        <a href="https://bestcoachmusic.netlify.app/church" class="dropdown-item active">Churches</a>
+                        <a href="https://bestcoachmusic.netlify.app/school" class="dropdown-item">Schools</a>
+                        <a href="https://bestcoachmusic.netlify.app/individuals" class="dropdown-item">Individuals</a>
+                        <a href="https://bestcoachmusic.netlify.app/group" class="dropdown-item">Groups</a>
                     </div>
                 </div>
-                <a class='nav-item nav-link active' href='/contact'>Contact</a>
+                <a href="https://bestcoachmusic.netlify.app/contact" class="nav-item nav-link">Contact</a>
             </div>
               <!--ADD-LINK-TO-JOIN-USING-GOGGLE-FORMS-->
             <a href="#" class="btn btn-primary px-4">Join</a>
@@ -223,22 +223,22 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
             <h3 class="text-primary mb-4">Newsletter</h3>
-            <form  id="form" novalidate="novalidate  method="POST">
-                <input type="hidden" name="access_key" value="e167d5d3-454e-4440-974b-d27b2f685620">
+            <form method="POST" name="contact" netlify>
                 <div class="form-group">
-                <input type="text" name="name"  class="form-control border-0 py-4" placeholder="Your Name" required>    
-    
+                    <input type="hidden" name="form-name" value="contact" />
                 </div>
-                <div class="form-group">
-                  <input type="email" name="email"  class="form-control border-0 py-4" placeholder="Your Email" required> 
-                </div>
-                <!-- Honeypot Spam Protection -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                <div>
-                    <button type="submit" class="btn btn-primary btn-block border-0 py-3">Submit Form</button>
-                </div>
-            </form>
-            <div id="result"></div>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name"  name="name" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email" name="email"
+                            required="required"/>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
+                    </div>
+                    <div id="result"></div>
+                </form>
         </div>
     </div>
     <div class="container-fluid pt-5" style="border-top: 1px solid rgba(5, 21, 24, 0.2);;">
@@ -270,7 +270,7 @@
 <script src="./JS/Submit.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./JS/Year.js"></script>
-<!-- Footer End -->
+<script src="./JS/newsLetter.js"></script>
 
     
 
