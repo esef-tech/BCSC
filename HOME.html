@@ -255,6 +255,52 @@
 </div>
 <!-- Header End -->
 
+<!--VIDEO-SETUP-->
+<script>
+  const [playState, setPlayState] = useState(false);
+
+const player = useRef(false);
+  const closePlayer = (e) => {
+    if (e.target === player.current) {
+      setPlayState(false);
+    }
+  };
+  return(
+
+  <div
+      class={`video-player ${playState ? "" : "hide"}`}
+      ref={player}
+      onClick={closePlayer}
+    >
+      <video src="BCSC\IMAGES\bestcoach-pictures\edited\WhatsApp Video 2025-09-27 at 03.21.03_2b03b8a7.mp4" autoplay muted controls></video>
+    </div>
+  );
+</script>
+<style>
+    .video-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0 0.9);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-player video {
+  width: 90;
+  max-width: 900px;
+  height: auto;
+  border: 4px solid #fff;
+}
+.video-player.hide {
+  display: none;
+}
+</style>
+
+
 <!--SERVICES_BEGIN_HERE-->
 <div class="container-fluid pt-5">
     <div class="container pb-3">
